@@ -30,7 +30,9 @@
 .article-label { color: var(--amber); font-size: .72rem; font-weight: 600; letter-spacing: .18em; }
 .article-hero h1 { max-width: 1050px; margin: 1.5rem 0 2rem; font: 500 clamp(3.4rem,8vw,8rem)/.9 var(--serif); letter-spacing: -.055em; }
 .article-lead { max-width: 760px; margin: 0; color: var(--muted); font: 400 clamp(1.15rem,2vw,1.45rem)/1.6 var(--sans); }
-.article-byline { display: flex; gap: 2rem; margin-top: 3rem; color: #7f8a91; font-size: .72rem; letter-spacing: .11em; }
+.article-byline { display: flex; flex-wrap: wrap; gap: .65rem 2rem; margin-top: 3rem; color: #7f8a91; font-size: .72rem; letter-spacing: .11em; }
+.article-byline time { color: #9ba5ac; }
+.quote-attribution { display: block; margin-top: 1rem; color: var(--muted); font: 500 .72rem/1.4 var(--sans); letter-spacing: .12em; }
 .article-layout { width: min(1080px, calc(100% - 3rem)); margin: 0 auto; padding: 6rem 0 9rem; display: grid; grid-template-columns: 190px minmax(0,700px); gap: 5rem; justify-content: center; }
 .article-aside { position: sticky; top: 2rem; align-self: start; }
 .article-aside p { margin: 0 0 1rem; color: var(--muted); font-size: .68rem; letter-spacing: .13em; }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://synthesis-space-time.progmetalhero.chatgpt.site/sitemap.xml

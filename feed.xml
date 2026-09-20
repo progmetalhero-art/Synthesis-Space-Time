@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Synthesis — Τεύχη και άρθρα</title>
+    <link>https://synthesis-space-time.progmetalhero.chatgpt.site/</link>
+    <description>Επιστήμη, φιλοσοφία και τέχνη στο ίδιο αναγνωστήριο.</description>
+    <language>el</language>
+    <lastBuildDate>Sun, 20 Sep 2026 17:30:00 GMT</lastBuildDate>
+    <atom:link href="https://synthesis-space-time.progmetalhero.chatgpt.site/feed.xml" rel="self" type="application/rss+xml" />
+    <item><title>Δεν υπάρχει ένα κοινό «τώρα» για ολόκληρο το σύμπαν</title><link>https://synthesis-space-time.progmetalhero.chatgpt.site/articles/now</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/now</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Η ειδική σχετικότητα αφαίρεσε από το παρόν την καθολικότητά του.</description></item>
+    <item><title>Τι είναι πραγματικά ο χωροχρόνος;</title><link>https://synthesis-space-time.progmetalhero.chatgpt.site/articles/spacetime</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/spacetime</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Η γεωμετρική δομή που οργανώνει αποστάσεις, διάρκειες και αιτιακές σχέσεις.</description></item>
+    <item><title>Γιατί θυμόμαστε το παρελθόν και όχι το μέλλον;</title><link>https://synthesis-space-time.progmetalhero.chatgpt.site/articles/arrow-of-time</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/arrow-of-time</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Εντροπία, μνήμη και το φυσικό βέλος του χρόνου.</description></item>
+    <item><title>Η συνείδηση είναι θεατής ή μέρος του φαινομένου;</title><link>https://synthesis-space-time.progmetalhero.chatgpt.site/articles/consciousness</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/consciousness</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Τι γνωρίζει η επιστήμη και πού αρχίζει το πρόβλημα της εμπειρίας.</description></item>
+    <item><title>Τι υπάρχει πέρα από τον Μεγάλο Ελκυστή;</title><link>https://synthesis-space-time.progmetalhero.chatgpt.site/articles/great-attractor</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/great-attractor</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Η Λανιακέα, η ζώνη αποφυγής και τα όρια της κοσμικής χαρτογραφίας.</description></item>
+    <item><title>Το τελευταίο ανθρώπινο δημιούργημα</title><link>https://synthesis-space-time.progmetalhero.chatgpt.site/articles/voyager</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/voyager</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Οι Voyager, ο Χρυσός Δίσκος και η ανθρώπινη επιθυμία να αφήσουμε κάτι πίσω μας.</description></item>
+  </channel>
+</rss>
