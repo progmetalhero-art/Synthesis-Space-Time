@@ -40,6 +40,27 @@
 .evidence-box.philosophy { border-color: var(--amber); }
 .evidence-box strong { display: block; margin-bottom: .7rem; color: var(--cyan); font-size: .7rem; letter-spacing: .14em; }
 .evidence-box.philosophy strong { color: var(--amber); }
+.spacetime-lab { margin: 4.5rem 0; padding: 0; border: 1px solid var(--line); background: #090d13; font-family: var(--sans); }
+.spacetime-lab .lab-heading { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid var(--line); }
+.spacetime-lab .lab-heading > p:first-child { margin: 0 0 .8rem; color: var(--amber); font-size: .68rem; font-weight: 600; letter-spacing: .16em; }
+.spacetime-lab .lab-heading h2 { margin: 0 0 1rem; font: 500 clamp(1.8rem,4vw,2.8rem)/1.04 var(--serif); }
+.spacetime-lab .lab-heading > p:last-child { max-width: 620px; margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.65; }
+.light-cone-stage { position: relative; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 50% 50%, rgba(116,213,231,.07), transparent 58%); }
+#light-cone-canvas { display: block; width: 100%; height: auto; aspect-ratio: 1.395 / 1; touch-action: none; cursor: crosshair; }
+.cone-legend { position: absolute; left: 1rem; bottom: 1rem; display: flex; flex-wrap: wrap; gap: .85rem; padding: .55rem .7rem; background: rgba(5,7,11,.78); border: 1px solid rgba(255,255,255,.08); color: var(--muted); font-size: .66rem; letter-spacing: .08em; backdrop-filter: blur(8px); }
+.cone-legend span { display: flex; align-items: center; gap: .35rem; }
+.cone-legend i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--cyan); }
+.cone-legend i.elsewhere { background: #53616c; }
+.cone-legend i.past { background: var(--amber); }
+.light-cone-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1.5rem 2rem; border-bottom: 1px solid var(--line); }
+.light-cone-controls label { color: var(--muted); font-size: .76rem; letter-spacing: .05em; }
+.light-cone-controls label > span { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; }
+.light-cone-controls output { color: var(--paper); font-variant-numeric: tabular-nums; }
+.light-cone-controls input { width: 100%; accent-color: var(--cyan); cursor: pointer; }
+.cone-reading { display: grid; grid-template-columns: 170px 1fr; gap: 1.5rem; padding: 1.5rem 2rem; align-items: start; }
+.cone-reading span { color: var(--cyan); font-size: .7rem; font-weight: 600; letter-spacing: .12em; }
+.cone-reading p { margin: 0; color: #b8c1c7; font-size: .86rem; line-height: 1.6; }
+.lab-footnote { margin: 0 !important; padding: 0 2rem 1.6rem; color: #77828a; font-size: .72rem; line-height: 1.55; }
 .sources { margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--line); font-family: var(--sans); }
 .sources h2 { margin-top: 0; font-size: 1.7rem; }
 .sources ol { padding-left: 1.2rem; color: var(--muted); font-size: .86rem; }
@@ -70,10 +91,14 @@
   .article-aside { position: static; display: none; }
   .article-breadcrumb { margin-bottom: 3rem; }
   .article-hero { padding-top: 5rem; }
+  .light-cone-controls, .cone-reading { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 @media (max-width: 520px) {
   .issue-masthead { padding-top: 5rem; }
   .article-layout { width: min(100% - 2rem, 1080px); }
   .article-byline, .issue-label { flex-direction: column; gap: .5rem; }
+  .spacetime-lab .lab-heading, .light-cone-controls, .cone-reading { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .lab-footnote { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .cone-legend { right: .65rem; left: .65rem; bottom: .65rem; justify-content: center; }
 }
