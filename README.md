@@ -1,39 +1,39 @@
-# Synthesis — Space, Time & Consciousness
+# Synthesis — Χωροχρόνος, επιστήμη και φιλοσοφία
 
-A digital magazine at the intersection of spacetime, cosmology, consciousness, philosophy, and visual art.
+Ένα ψηφιακό περιοδικό στο σημείο όπου συναντιούνται η κοσμολογία, η φυσική, η συνείδηση, η φιλοσοφία και η τέχνη.
 
-## About
+## Σχετικά
 
-**Synthesis** explores the questions that emerge where physics meets human experience: the nature of time, the structure of spacetime, cosmic mysteries, consciousness, and our place in the universe.
+Το **Synthesis** εξερευνά τα ερωτήματα που γεννιούνται εκεί όπου η επιστήμη συναντά την ανθρώπινη εμπειρία: τη φύση του χρόνου, τη δομή του χωροχρόνου, τα μυστήρια του Σύμπαντος, τη συνείδηση και τη θέση μας μέσα σε αυτό.
 
-The first issue includes six long-form essays:
+Το πρώτο τεύχος περιλαμβάνει έξι εκτενή άρθρα:
 
-- What Is Spacetime?
-- Why Does Time Have a Direction?
-- Does “Now” Exist?
-- Is Consciousness Part of the Universe?
-- Voyager: The Message We Sent Into the Dark
-- The Great Attractor: The Place Pulling Us Through Space
+- Τι είναι πραγματικά ο χωροχρόνος;
+- Γιατί θυμόμαστε το παρελθόν;
+- Δεν υπάρχει ένα κοινό «τώρα»
+- Η συνείδηση: θεατής ή μέρος του φαινομένου;
+- Το τελευταίο ανθρώπινο δημιούργημα
+- Πέρα από τον Μεγάλο Ελκυστή
 
-## Live site
+## Ζωντανή έκδοση
 
-[Read Synthesis online](https://synthesis-space-time.progmetalhero.chatgpt.site)
+[Διάβασε το Synthesis online](https://synthesis-space-time.progmetalhero.chatgpt.site)
 
-## Structure
+## Δομή
 
-This is a dependency-free static website built with semantic HTML, CSS, and vanilla JavaScript.
+Πρόκειται για ένα στατικό website χωρίς εξωτερικές εξαρτήσεις, κατασκευασμένο με semantic HTML, CSS και vanilla JavaScript.
 
-- `index.html` — homepage
-- `issue-01.html` — first issue
-- `about.html` — editorial statement
-- `articles/` — full essays
-- `styles.css` and `article.css` — visual system
-- `script.js` — navigation and interactions
+- `index.html` — αρχική σελίδα
+- `issue-01.html` — πρώτο τεύχος
+- `about.html` — ταυτότητα και σκοπός του εγχειρήματος
+- `articles/` — πλήρη άρθρα
+- `styles.css` και `article.css` — οπτικό σύστημα
+- `script.js` — πλοήγηση και αλληλεπιδράσεις
 
-## Language
+## Γλώσσα
 
-The current edition is published in English.
+Η τρέχουσα έκδοση και όλα τα άρθρα είναι δημοσιευμένα στα ελληνικά.
 
 ---
 
-Created by [progmetalhero-art](https://github.com/progmetalhero-art).
+Δημιουργήθηκε από τον [progmetalhero-art](https://github.com/progmetalhero-art).
