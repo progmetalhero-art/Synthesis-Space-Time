@@ -346,6 +346,9 @@ nav a:hover, nav a:focus-visible { color: var(--paper); }
 
 footer { min-height: 110px; padding: 2rem 3rem; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font-size: .72rem; letter-spacing: .08em; }
 footer p { margin: 0; }
+footer .legal-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1.2rem; }
+footer .legal-links a { color: var(--muted); font-size: .72rem; text-decoration: none; }
+footer .legal-links a:hover, footer .legal-links a[aria-current="page"] { color: var(--paper); }
 
 @keyframes breathe { 0%,100% { transform: translate(-50%, -50%) rotate(-19deg) scale(1); } 50% { transform: translate(-50%, -50%) rotate(-19deg) scale(1.035); } }
 
