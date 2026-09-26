@@ -118,11 +118,8 @@ nav a:hover, nav a:focus-visible { color: var(--paper); }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    radial-gradient(circle at 72% 45%, rgba(240,160,75,.16) 0 3%, transparent 12%),
-    radial-gradient(circle at 74% 44%, rgba(116,213,231,.12), transparent 31%),
-    #070a10;
-  background-image: url('./hero-cosmos.png');
+  background-color: #070a10;
+  background-image: url('./hero-cosmos.webp');
   background-size: cover;
   background-position: center;
   filter: saturate(.78) contrast(1.08);
@@ -186,9 +183,9 @@ nav a:hover, nav a:focus-visible { color: var(--paper); }
 .issue-header > p { max-width: 34rem; margin: 0 0 .7rem; color: var(--muted); font-size: 1.05rem; }
 .feature-article { display: grid; grid-template-columns: .25fr 1.75fr; min-height: 440px; padding: clamp(2rem,5vw,5rem); background: var(--paper); color: var(--ink); text-decoration: none; transition: transform .25s ease; }
 .feature-article:hover { transform: translateY(-4px); }
-.feature-number { color: #70777b; font-size: .75rem; letter-spacing: .16em; }
+.feature-number { color: #5b656b; font-size: .75rem; letter-spacing: .16em; }
 .feature-article > div { max-width: 850px; }
-.article-meta, .article-card > span { color: #667078; font-size: .7rem; font-weight: 600; letter-spacing: .16em; }
+.article-meta, .article-card > span { color: #384046; font-size: .7rem; font-weight: 600; letter-spacing: .16em; }
 .feature-article h3 { margin: 1.6rem 0; font: 500 clamp(2.5rem,5vw,5.2rem)/.98 var(--serif); letter-spacing: -.04em; }
 .feature-article p:not(.article-meta) { max-width: 650px; color: #41494f; }
 .read-link { display: inline-block; margin-top: 2rem; padding-bottom: .25rem; border-bottom: 1px solid currentColor; font-size: .82rem; }
@@ -332,7 +329,7 @@ nav a:hover, nav a:focus-visible { color: var(--paper); }
 .observation-grid article { min-height: 270px; padding: 2rem 2rem 2rem 0; border-bottom: 1px solid rgba(5,7,11,.2); }
 .observation-grid article:not(:nth-child(3n)) { border-right: 1px solid rgba(5,7,11,.2); padding-right: 2rem; }
 .observation-grid article:nth-child(3n+2), .observation-grid article:nth-child(3n+3) { padding-left: 2rem; }
-.observation-grid span { color: #8a5a27; font-size: .7rem; letter-spacing: .16em; }
+.observation-grid span { color: #7a4f20; font-size: .7rem; letter-spacing: .16em; }
 .observation-grid h3 { margin: 2.6rem 0 1rem; font: 500 1.8rem/1.05 var(--serif); }
 .observation-grid p { margin: 0; color: #545d62; }
 
