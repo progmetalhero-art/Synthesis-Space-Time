@@ -73,6 +73,11 @@ if (lightConeCanvas) {
   }));
   let pulse = 0;
   let animationFrame;
+  let isVisible = !("IntersectionObserver" in window);
+  let lastLabel;
+
+  // Ίδια κλίμακα στους δύο άξονες (c = 1), ώστε το φως να κινείται στις 45°.
+  const unitScale = () => Math.min(lightConeCanvas.width, lightConeCanvas.height) / 12;
 
   const formatValue = (value) => Number(value).toLocaleString("el-GR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
@@ -105,12 +110,11 @@ if (lightConeCanvas) {
     const height = lightConeCanvas.height;
     const centerX = width / 2;
     const centerY = height / 2;
-    const scaleX = width / 12;
-    const scaleY = height / 12;
+    const scale = unitScale();
     const space = Number(spaceInput.value);
     const time = Number(timeInput.value);
-    const pointX = centerX + space * scaleX;
-    const pointY = centerY - time * scaleY;
+    const pointX = centerX + space * scale;
+    const pointY = centerY - time * scale;
     const classification = classifyEvent(space, time);
 
     context.clearRect(0, 0, width, height);
@@ -127,16 +131,16 @@ if (lightConeCanvas) {
     context.fillStyle = "rgba(116,213,231,.09)";
     context.beginPath();
     context.moveTo(centerX, centerY);
-    context.lineTo(centerX - 6 * scaleX, centerY - 6 * scaleY);
-    context.lineTo(centerX + 6 * scaleX, centerY - 6 * scaleY);
+    context.lineTo(centerX - 6 * scale, centerY - 6 * scale);
+    context.lineTo(centerX + 6 * scale, centerY - 6 * scale);
     context.closePath();
     context.fill();
 
     context.fillStyle = "rgba(240,160,75,.08)";
     context.beginPath();
     context.moveTo(centerX, centerY);
-    context.lineTo(centerX - 6 * scaleX, centerY + 6 * scaleY);
-    context.lineTo(centerX + 6 * scaleX, centerY + 6 * scaleY);
+    context.lineTo(centerX - 6 * scale, centerY + 6 * scale);
+    context.lineTo(centerX + 6 * scale, centerY + 6 * scale);
     context.closePath();
     context.fill();
 
@@ -153,10 +157,10 @@ if (lightConeCanvas) {
     context.lineWidth = 2.5;
     context.setLineDash([10, 9]);
     context.beginPath();
-    context.moveTo(centerX - 6 * scaleX, centerY + 6 * scaleY);
-    context.lineTo(centerX + 6 * scaleX, centerY - 6 * scaleY);
-    context.moveTo(centerX - 6 * scaleX, centerY - 6 * scaleY);
-    context.lineTo(centerX + 6 * scaleX, centerY + 6 * scaleY);
+    context.moveTo(centerX - 6 * scale, centerY + 6 * scale);
+    context.lineTo(centerX + 6 * scale, centerY - 6 * scale);
+    context.moveTo(centerX - 6 * scale, centerY - 6 * scale);
+    context.lineTo(centerX + 6 * scale, centerY + 6 * scale);
     context.stroke();
     context.setLineDash([]);
 
@@ -190,30 +194,58 @@ if (lightConeCanvas) {
     context.moveTo(pointX, pointY);
     context.lineTo(centerX, pointY);
     context.stroke();
+  };
 
+  // Το κείμενο αλλάζει μόνο με ενέργεια του χρήστη, όχι σε κάθε frame,
+  // ώστε τα live regions να μην ανακοινώνονται ξανά και ξανά.
+  const updateReading = () => {
+    const space = Number(spaceInput.value);
+    const time = Number(timeInput.value);
+    const classification = classifyEvent(space, time);
     spaceValue.value = formatValue(space);
     timeValue.value = formatValue(time);
+    if (classification.label === lastLabel) return;
+    lastLabel = classification.label;
     stateLabel.textContent = classification.label;
     stateLabel.style.color = classification.color;
     explanation.textContent = classification.text;
   };
 
-  const animate = () => {
-    pulse = (Math.sin(performance.now() / 600) + 1) / 2;
+  const update = () => {
+    updateReading();
+    drawLightCone();
+  };
+
+  const animate = (now) => {
+    pulse = (Math.sin(now / 600) + 1) / 2;
     drawLightCone();
     animationFrame = requestAnimationFrame(animate);
   };
 
-  const setFromPointer = (event) => {
-    const bounds = lightConeCanvas.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width) * 12 - 6;
-    const t = 6 - ((event.clientY - bounds.top) / bounds.height) * 12;
-    spaceInput.value = Math.max(-5, Math.min(5, x)).toFixed(1);
-    timeInput.value = Math.max(-5, Math.min(5, t)).toFixed(1);
-    drawLightCone();
+  const startAnimation = () => {
+    if (reduceMotion || animationFrame || !isVisible || document.hidden) return;
+    animationFrame = requestAnimationFrame(animate);
   };
 
-  [spaceInput, timeInput].forEach((input) => input.addEventListener("input", drawLightCone));
+  const stopAnimation = () => {
+    if (!animationFrame) return;
+    cancelAnimationFrame(animationFrame);
+    animationFrame = undefined;
+  };
+
+  const setFromPointer = (event) => {
+    const bounds = lightConeCanvas.getBoundingClientRect();
+    const scale = unitScale();
+    const canvasX = ((event.clientX - bounds.left) / bounds.width) * lightConeCanvas.width;
+    const canvasY = ((event.clientY - bounds.top) / bounds.height) * lightConeCanvas.height;
+    const x = (canvasX - lightConeCanvas.width / 2) / scale;
+    const t = (lightConeCanvas.height / 2 - canvasY) / scale;
+    spaceInput.value = Math.max(-5, Math.min(5, x)).toFixed(1);
+    timeInput.value = Math.max(-5, Math.min(5, t)).toFixed(1);
+    update();
+  };
+
+  [spaceInput, timeInput].forEach((input) => input.addEventListener("input", update));
   lightConeCanvas.addEventListener("pointerdown", (event) => {
     lightConeCanvas.setPointerCapture(event.pointerId);
     setFromPointer(event);
@@ -222,10 +254,19 @@ if (lightConeCanvas) {
     if (lightConeCanvas.hasPointerCapture(event.pointerId)) setFromPointer(event);
   });
 
-  drawLightCone();
-  if (!reduceMotion) animate();
+  update();
+  startAnimation();
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      isVisible = entries[entries.length - 1].isIntersecting;
+      if (isVisible) startAnimation();
+      else stopAnimation();
+    }).observe(lightConeCanvas);
+  }
+
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden && animationFrame) cancelAnimationFrame(animationFrame);
-    else if (!document.hidden && !reduceMotion) animate();
+    if (document.hidden) stopAnimation();
+    else startAnimation();
   });
 }
