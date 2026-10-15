@@ -3,7 +3,7 @@
 .archive-page .archive-intro {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-  align-items: end;
+  align-items: center;
   gap: 5rem;
   padding-top: 12rem;
   padding-bottom: 6rem;
@@ -22,6 +22,54 @@
   font-size: 1.05rem;
   line-height: 1.8;
 }
+
+.archive-page .archive-intro-aside { min-width: 0; }
+.archive-page .archive-constellation {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 1.45;
+  margin: 0 0 1.8rem;
+}
+.archive-page .archive-constellation::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -8% -3%;
+  background: radial-gradient(ellipse at 27% 34%, rgba(240,160,75,.06), transparent 49%), radial-gradient(ellipse at 72% 56%, rgba(116,213,231,.07), transparent 52%);
+}
+.archive-page .archive-orbits { position: absolute; inset: 0; width: 100%; height: 100%; }
+.archive-page .archive-world {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: .85rem;
+  width: 40%;
+  color: var(--paper);
+  text-decoration: none;
+}
+.archive-page .archive-world-time { top: 9%; left: 2%; --world-light: 240,160,75; }
+.archive-page .archive-world-space { top: 32%; right: 0; width: 47%; --world-light: 116,213,231; }
+.archive-page .archive-world-image {
+  display: block;
+  width: 75%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(var(--world-light), .35);
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 7px rgba(var(--world-light), .025), 0 0 40px rgba(var(--world-light), .09);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.archive-page .archive-world-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.75); transition: transform .4s ease, filter .4s ease; }
+.archive-page .archive-world-time img { object-position: 55% center; }
+.archive-page .archive-world-space img { object-position: 68% 25%; }
+.archive-page .archive-world-label { display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap; font-size: .67rem; letter-spacing: .12em; }
+.archive-page .archive-world-label > span:first-child { color: rgba(var(--world-light), 1); }
+.archive-page .archive-world-label > span:last-child { color: var(--muted); }
+.archive-page .archive-world:hover .archive-world-image { border-color: rgba(var(--world-light), .7); box-shadow: 0 0 0 7px rgba(var(--world-light), .04), 0 0 50px rgba(var(--world-light), .16); }
+.archive-page .archive-world:hover img { transform: scale(1.08); filter: saturate(1); }
+.archive-page .archive-world:focus-visible { outline: 2px solid var(--cyan); outline-offset: 7px; border-radius: 2px; }
 
 .archive-page .archive-editions { display: grid; gap: 4.5rem; }
 .archive-page .archive-edition { min-width: 0; }
@@ -82,6 +130,8 @@
 
 @media (max-width: 820px) {
   .archive-page .archive-intro { grid-template-columns: 1fr; gap: 2rem; padding-top: 10rem; padding-bottom: 4rem; }
+  .archive-page .archive-intro-aside { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 2rem; }
+  .archive-page .archive-constellation { margin: 0; }
   .archive-page .archive-intro-copy { max-width: 34rem; }
   .archive-page .archive-entry { min-height: 550px; }
   .archive-page .archive-entry::after { background: linear-gradient(90deg, rgba(5,7,11,.8), rgba(5,7,11,.36)), linear-gradient(0deg, rgba(5,7,11,.9), transparent 85%); }
@@ -94,6 +144,8 @@
   .archive-page .archive-intro h1 { font-size: clamp(3.3rem, 14vw, 4.4rem); }
   .archive-page .archive-intro .eyebrow { font-size: .62rem; letter-spacing: .16em; }
   .archive-page .archive-intro-copy { font-size: .96rem; }
+  .archive-page .archive-intro-aside { grid-template-columns: 1fr; gap: 1.5rem; }
+  .archive-page .archive-constellation { width: min(100%, 320px); justify-self: center; }
   .archive-page .archive-editions { gap: 3.2rem; }
   .archive-page .archive-entry { min-height: 530px; }
   .archive-page .archive-entry-content { padding: 2rem 1.5rem; }
@@ -110,5 +162,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .archive-page .archive-art, .archive-page .archive-entry-action > span { transition: none; }
+  .archive-page .archive-art, .archive-page .archive-entry-action > span, .archive-page .archive-world-image, .archive-page .archive-world-image img { transition: none; }
 }
