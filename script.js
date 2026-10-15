@@ -30,6 +30,7 @@ const fields = {
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const lens = lenses[button.dataset.lens];
+    if (!lens || Object.values(fields).some((element) => !element)) return;
     Object.entries(fields).forEach(([key, element]) => { element.textContent = lens[key]; });
     buttons.forEach((item) => {
       const selected = item === button;
@@ -42,6 +43,7 @@ buttons.forEach((button) => {
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector("#site-nav");
 
+if (menuButton && navigation) {
 menuButton.addEventListener("click", () => {
   const open = menuButton.getAttribute("aria-expanded") === "true";
   menuButton.setAttribute("aria-expanded", String(!open));
@@ -54,6 +56,15 @@ navigation.querySelectorAll("a").forEach((link) => {
     navigation.classList.remove("open");
   });
 });
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+    menuButton.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("open");
+    menuButton.focus();
+  }
+});
+}
 
 const lightConeCanvas = document.querySelector("#light-cone-canvas");
 
