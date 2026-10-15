@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#081014" />
+    <meta name="description" content="Διάβασε τα τεύχη του Synthesis online, με την αρχική σελιδοποίηση, τις εικόνες και την τυπογραφία τους." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23081014'/%3E%3Ctext x='32' y='48' text-anchor='middle' font-family='Georgia,serif' font-size='52' fill='%23b88a57'%3ES%3C/text%3E%3C/svg%3E" />
+    <title>Αναγνωστήριο · Synthesis</title>
+    <link rel="stylesheet" href="./magazine.css" />
+    <link rel="stylesheet" href="./reader.css" />
+    <noscript><style>.reader-workspace { display: none; }</style></noscript>
+    <script src="./script.js" defer></script>
+    <script src="./reader.js" type="module"></script>
+  </head>
+  <body class="reader-body">
+    <a class="skip-link" href="#reader-main">Μετάβαση στο αναγνωστήριο</a>
+    <header class="magazine-header">
+      <div class="shell">
+        <a class="wordmark" href="./" aria-label="Synthesis — αρχική"><span>SYNTHESIS</span><small>ΕΠΙΣΤΗΜΗ · ΦΙΛΟΣΟΦΙΑ · ΤΕΧΝΗ</small></a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Μενού</button>
+        <nav class="magazine-nav" id="site-nav" aria-label="Κύρια πλοήγηση">
+          <a href="./issue-02.html">Τεύχος 02</a>
+          <a href="./archive.html">Αρχείο τευχών</a>
+          <a href="./about.html">Για το Synthesis</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="reader-main shell" id="reader-main">
+      <div class="reader-heading">
+        <div>
+          <p class="eyebrow">ΤΟ ΤΕΥΧΟΣ ΟΠΩΣ ΕΚΔΟΘΗΚΕ</p>
+          <h1 id="reader-title">Synthesis / Τεύχος 02</h1>
+          <p class="reader-intro">Η αρχική έκδοση, σελίδα προς σελίδα.</p>
+        </div>
+        <a class="reader-return" id="issue-link" href="./issue-02.html"><span aria-hidden="true">←</span> Στο τεύχος</a>
+      </div>
+
+      <div class="reader-workspace" id="reader-workspace">
+        <div class="reader-toolbar" role="region" aria-label="Χειριστήρια ανάγνωσης">
+          <form class="reader-pagination" id="page-form" aria-label="Επιλογή σελίδας" novalidate>
+            <button class="reader-control reader-arrow" id="previous-page" type="button" aria-label="Προηγούμενη σελίδα" title="Προηγούμενη σελίδα (←)" disabled><span aria-hidden="true">←</span></button>
+            <label for="page-number">Σελίδα</label>
+            <input id="page-number" name="page" type="number" min="1" max="42" value="1" inputmode="numeric" aria-label="Αριθμός σελίδας" disabled />
+            <span class="reader-total">/ <span id="page-total">42</span></span>
+            <button class="reader-control reader-arrow" id="next-page" type="button" aria-label="Επόμενη σελίδα" title="Επόμενη σελίδα (→)" disabled><span aria-hidden="true">→</span></button>
+          </form>
+          <div class="reader-zoom" role="group" aria-label="Μεγέθυνση σελίδας">
+            <button class="reader-control reader-symbol" id="zoom-out" type="button" aria-label="Σμίκρυνση" title="Σμίκρυνση (−)" disabled>−</button>
+            <output id="zoom-level" aria-label="Ποσοστό μεγέθυνσης">100%</output>
+            <button class="reader-control reader-symbol" id="zoom-in" type="button" aria-label="Μεγέθυνση" title="Μεγέθυνση (+)" disabled>+</button>
+            <button class="reader-control reader-fit" id="fit-width" type="button" title="Προσαρμογή στο πλάτος (0)" disabled>Στο πλάτος</button>
+          </div>
+          <button class="reader-control reader-fullscreen" id="fullscreen" type="button" aria-label="Πλήρης οθόνη" aria-pressed="false" hidden><span aria-hidden="true">⛶</span><span>Πλήρης οθόνη</span></button>
+        </div>
+
+        <p class="reader-status" id="reader-status" role="status" aria-live="polite">Φόρτωση τεύχους…</p>
+        <div class="reader-viewport" id="reader-viewport" aria-busy="true">
+          <div class="reader-page" id="reader-page" aria-label="Σελίδα τεύχους"></div>
+        </div>
+        <div class="reader-bottomline">
+          <p>Πλοήγηση με τα βέλη <span aria-hidden="true">← →</span> του πληκτρολογίου.</p>
+          <a id="download-pdf" href="./issues/synthesis-issue-02.pdf" download="synthesis-issue-02.pdf">Λήψη PDF <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <details class="reader-text" id="reader-text" hidden>
+        <summary>Κείμενο της σελίδας</summary>
+        <p class="reader-text-note">Το κείμενο της τρέχουσας σελίδας σε απλή μορφή.</p>
+        <div id="page-text" class="reader-page-text" lang="el"></div>
+      </details>
+      <p class="reader-original">Μπορείς επίσης να <a id="open-pdf" href="./issues/synthesis-issue-02.pdf" target="_blank" rel="noopener">ανοίξεις το πλήρες PDF<span class="reader-sr-only"> σε νέα καρτέλα</span></a>.</p>
+      <noscript>
+        <div class="reader-noscript">
+          <p>Διάβασε τα πλήρη τεύχη στην αρχική τους μορφή:</p>
+          <a href="./issues/synthesis-issue-01.pdf">Τεύχος 01 — άνοιγμα PDF</a>
+          <a href="./issues/synthesis-issue-02.pdf">Τεύχος 02 — άνοιγμα PDF</a>
+        </div>
+      </noscript>
+    </main>
+    <footer class="magazine-footer">
+      <div class="shell">
+        <div>
+          <a class="wordmark" href="./"><span>SYNTHESIS</span></a>
+          <p>Ένα αρχείο ιδεών. Μια ανοιχτή συζήτηση.</p>
+        </div>
+        <nav aria-label="Πλοήγηση υποσέλιδου">
+          <a href="./archive.html">Αρχείο τευχών</a>
+          <a href="./about.html">Για το Synthesis</a>
+        </nav>
+        <p class="copyright">© 2026 Synthesis · Χρήστος Ν.</p>
+      </div>
+    </footer>
+  </body>
+</html>
