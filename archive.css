@@ -62,13 +62,14 @@
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 .archive-page .archive-world-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.75); transition: transform .4s ease, filter .4s ease; }
-.archive-page .archive-world-time img { object-position: 55% center; }
+.archive-page .archive-world-time img { object-position: 100% center; transform: scale(1.45); transform-origin: right center; }
 .archive-page .archive-world-space img { object-position: 68% 25%; }
 .archive-page .archive-world-label { display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap; font-size: .67rem; letter-spacing: .12em; }
 .archive-page .archive-world-label > span:first-child { color: rgba(var(--world-light), 1); }
 .archive-page .archive-world-label > span:last-child { color: var(--muted); }
 .archive-page .archive-world:hover .archive-world-image { border-color: rgba(var(--world-light), .7); box-shadow: 0 0 0 7px rgba(var(--world-light), .04), 0 0 50px rgba(var(--world-light), .16); }
 .archive-page .archive-world:hover img { transform: scale(1.08); filter: saturate(1); }
+.archive-page .archive-world-time:hover img { transform: scale(1.55); }
 .archive-page .archive-world:focus-visible { outline: 2px solid var(--cyan); outline-offset: 7px; border-radius: 2px; }
 
 .archive-page .archive-editions { display: grid; gap: 4.5rem; }
