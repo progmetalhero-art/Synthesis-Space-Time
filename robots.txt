@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://progmetalhero-art.github.io/Synthesis-Space-Time/sitemap.xml

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Synthesis — Τεύχη και άρθρα</title>
+    <link>https://progmetalhero-art.github.io/Synthesis-Space-Time/</link>
+    <description>Επιστήμη, φιλοσοφία και τέχνη στο ίδιο αναγνωστήριο.</description>
+    <language>el</language>
+    <lastBuildDate>Sun, 20 Sep 2026 17:30:00 GMT</lastBuildDate>
+    <atom:link href="https://progmetalhero-art.github.io/Synthesis-Space-Time/feed.xml" rel="self" type="application/rss+xml" />
+    <item><title>Τεύχος 02 — Τι είναι το «εδώ»;</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/issue-02.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/issue-02.html</guid><description>Έξι κείμενα για τη μέτρηση, τους χάρτες του σύμπαντος και τη θέση του παρατηρητή. Ολόκληρο το τεύχος, 42 σελίδες, για online ανάγνωση και λήψη PDF.</description><enclosure url="https://progmetalhero-art.github.io/Synthesis-Space-Time/issues/synthesis-issue-02.pdf" length="2388575" type="application/pdf" /></item>
+    <item><title>Δεν υπάρχει ένα κοινό «τώρα» για ολόκληρο το σύμπαν</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/articles/now.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/now</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Η ειδική σχετικότητα αφαίρεσε από το παρόν την καθολικότητά του.</description></item>
+    <item><title>Τι είναι πραγματικά ο χωροχρόνος;</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/articles/spacetime.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/spacetime</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Η γεωμετρική δομή που οργανώνει αποστάσεις, διάρκειες και αιτιακές σχέσεις.</description></item>
+    <item><title>Γιατί θυμόμαστε το παρελθόν και όχι το μέλλον;</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/articles/arrow-of-time.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/arrow-of-time</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Εντροπία, μνήμη και το φυσικό βέλος του χρόνου.</description></item>
+    <item><title>Η συνείδηση είναι θεατής ή μέρος του φαινομένου;</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/articles/consciousness.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/consciousness</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Τι γνωρίζει η επιστήμη και πού αρχίζει το πρόβλημα της εμπειρίας.</description></item>
+    <item><title>Τι υπάρχει πέρα από τον Μεγάλο Ελκυστή;</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/articles/great-attractor.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/great-attractor</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Η Λανιακέα, η ζώνη αποφυγής και τα όρια της κοσμικής χαρτογραφίας.</description></item>
+    <item><title>Το τελευταίο ανθρώπινο δημιούργημα</title><link>https://progmetalhero-art.github.io/Synthesis-Space-Time/articles/voyager.html</link><guid isPermaLink="true">https://synthesis-space-time.progmetalhero.chatgpt.site/articles/voyager</guid><pubDate>Sun, 20 Sep 2026 09:00:00 GMT</pubDate><description>Οι Voyager, ο Χρυσός Δίσκος και η ανθρώπινη επιθυμία να αφήσουμε κάτι πίσω μας.</description></item>
+  </channel>
+</rss>
