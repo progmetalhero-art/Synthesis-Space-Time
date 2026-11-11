@@ -1,0 +1,42 @@
+/* Each edition keeps the original Synthesis web design and its own artwork. */
+.issue-two-home { --amber: #d2a56f; }
+.issue-two-home .hero-art { background-image: url('./assets/issue-02-hero.jpg'); background-position: 72% 50%; filter: saturate(.8) contrast(1.06); }
+.issue-two-home .hero::after { background: linear-gradient(90deg, rgba(5,7,11,.94) 0%, rgba(5,7,11,.66) 46%, rgba(5,7,11,.1) 82%), linear-gradient(0deg, var(--ink), transparent 36%); }
+.issue-two-home .hero h1 { max-width: 1050px; }
+.issue-two-home .edition-label { display: block; margin-bottom: .7rem; color: #c5ccd0; font-size: .65rem; letter-spacing: .15em; }
+.issue-two-home .issue-label-line { display: flex; align-items: center; gap: 1rem; margin-top: 1.8rem; color: var(--muted); font-size: .7rem; letter-spacing: .1em; }
+.issue-two-home .issue-label-line a { color: var(--amber); text-underline-offset: 4px; }
+.issue-two-home .map-visual { background: radial-gradient(ellipse at center, rgba(116,213,231,.12), transparent 60%); }
+.issue-two-home .map-visual .gravity-core { width: 44px; height: 44px; box-shadow: 0 0 80px rgba(116,213,231,.16); background: radial-gradient(circle, #eff2ed 0 5px, var(--cyan) 6px 8px, transparent 9px); border: 1px solid rgba(5,7,11,.25); }
+.issue-two-home .map-observer { position: absolute; left: 50%; top: calc(50% + 38px); transform: translateX(-50%); color: #677077; font: 500 .62rem var(--sans); letter-spacing: .14em; }
+.horizon-lab { margin-top: 4rem; padding: 2.2rem; border: 1px solid var(--line); background: #0b121a; }
+.horizon-measurements { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 2rem; }
+.horizon-measurements label { display: block; color: var(--muted); font-size: .8rem; }
+.horizon-measurements output { display: block; margin-top: .8rem; color: var(--paper); font: 400 clamp(2.7rem,6vw,5rem)/1 var(--serif); font-variant-numeric: tabular-nums; }
+.horizon-measurements .horizon-result { text-align: right; color: var(--muted); font-size: .8rem; }
+.horizon-result output { color: var(--cyan); }
+.horizon-range { display: block; width: 100%; margin: 2rem 0 1rem; accent-color: var(--cyan); min-height: 44px; }
+.horizon-extents { display: flex; justify-content: space-between; color: var(--muted); font-size: .7rem; }
+.horizon-note { max-width: 820px; margin: 2rem 0 0; color: #7f8b94; font: 400 .77rem/1.7 var(--sans); }
+.issue-two-home .editor-note { margin-top: 0; }
+.issue-two-home .edition-downloads { display: flex; flex-wrap: wrap; gap: 1rem 2rem; padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+.edition-downloads a { text-underline-offset: 4px; }
+.observation-sources { margin: 3rem 0 0; padding-top: 1.5rem; border-top: 1px solid rgba(5,7,11,.18); color: #59636a; font-size: .75rem; line-height: 1.7; }
+.web-edition .edition-figure, .issue-two-article .article-figure { margin: 3rem 0; border: 1px solid var(--line); background: #f7f4ee; }
+.edition-figure img, .article-figure img { display: block; max-width: 100%; width: 100%; height: auto; }
+.web-edition .edition-figure figcaption, .issue-two-article .article-figure figcaption { padding: 1.1rem 1.3rem; border-top: 1px solid rgba(5,7,11,.15); color: #4c545b; font: 400 .78rem/1.65 var(--sans); }
+.figure-transcript { border-top: 1px solid rgba(5,7,11,.15); padding: 1rem 1.3rem; color: #4c545b; font: 400 .8rem/1.7 var(--sans); }
+.figure-transcript summary { cursor: pointer; }
+.figure-transcript p { margin: 1rem 0 0; }
+.edition-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font: 400 .85rem/1.7 var(--sans); }
+.edition-table th, .edition-table td { padding: .8rem; text-align: left; border: 1px solid var(--line); }
+.edition-table caption { margin-bottom: 1rem; color: var(--muted); text-align: left; }
+.figure-transcript .edition-table caption { color: inherit; }
+.web-edition .table-wrap { overflow-x: auto; }
+.evidence-box.limit { border-color: #98a4ad; }
+.evidence-box.limit > strong { color: #c1c9cf; }
+.web-edition .article-body, .issue-two-article .article-body { min-width: 0; }
+.web-edition .sources a, .issue-two-article .sources a { overflow-wrap: anywhere; }
+.edition-context-link { color: var(--amber); }
+@media (max-width: 820px) { .issue-two-home .hero-art { background-position: 60% center; } .issue-two-home .hero::after { background: linear-gradient(90deg,rgba(5,7,11,.86),rgba(5,7,11,.3)),linear-gradient(0deg,var(--ink),transparent 65%); } }
+@media (max-width: 520px) { .horizon-lab { padding: 1.3rem; } .horizon-measurements { gap: 1.5rem; } .horizon-measurements output { font-size: 2.6rem; } .horizon-measurements .horizon-result { text-align: left; } .issue-two-home .issue-label-line { flex-wrap: wrap; } .issue-two-home .hero h1 { font-size: clamp(3.25rem,12vw,4.3rem); } }

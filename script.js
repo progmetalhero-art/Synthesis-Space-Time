@@ -19,6 +19,12 @@ const lenses = {
   }
 };
 
+const hereLenses = {
+  science: { kicker: "Η οπτική της επιστήμης", title: "Μετράμε από εδώ", text: "Ο τρισδιάστατος χάρτης γαλαξιών έχει τη Γη στη μέση, επειδή οι μετρήσεις ξεκινούν από εδώ. Το κέντρο του χάρτη δηλώνει τη θέση του παρατηρητή, όχι μια προνομιακή θέση μέσα στο σύμπαν.", note: "Κάθε παρατήρηση έχει μια αφετηρία." },
+  philosophy: { kicker: "Η οπτική της φιλοσοφίας", title: "Το «εδώ» ως προοπτική", text: "Όποιος έχει κρατήσει χάρτη ξέρει ότι κάθε χάρτης έχει ένα κέντρο, και ότι το κέντρο είναι εκείνος που τον διαβάζει. Η θέση από την οποία κοιτάζουμε συμμετέχει στον τρόπο με τον οποίο περιγράφουμε τον κόσμο.", note: "Ο χάρτης δεν είναι η επικράτεια." },
+  art: { kicker: "Η οπτική της τέχνης", title: "Ένας κόσμος σε εικόνα", text: "Μια σκιά, ένας χάρτης, ένα φωτεινό σημείο. Μια εικόνα μπορεί να αλλάξει την αίσθηση της απόστασης και να μετατρέψει το «εδώ» από θέση σε μια νέα προοπτική.", note: "Τι αλλάζει όταν κοιτάζεις τον τόπο σου από μακριά;" }
+};
+
 const buttons = document.querySelectorAll(".lens-button");
 const fields = {
   kicker: document.querySelector("#lens-kicker"),
@@ -29,7 +35,8 @@ const fields = {
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    const lens = lenses[button.dataset.lens];
+    const context = button.closest("[data-lens-context]")?.dataset.lensContext;
+    const lens = (context === "here" ? hereLenses : lenses)[button.dataset.lens];
     if (!lens || Object.values(fields).some((element) => !element)) return;
     Object.entries(fields).forEach(([key, element]) => { element.textContent = lens[key]; });
     buttons.forEach((item) => {
@@ -64,6 +71,21 @@ document.addEventListener("keydown", (event) => {
     menuButton.focus();
   }
 });
+}
+
+const observerHeight = document.querySelector("#observer-height");
+if (observerHeight) {
+  const heightOutput = document.querySelector("#observer-height-value");
+  const distanceOutput = document.querySelector("#horizon-distance");
+  const number = new Intl.NumberFormat("el-GR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const updateHorizon = () => {
+    const height = Number(observerHeight.value);
+    heightOutput.value = `${number.format(height)} m`;
+    distanceOutput.value = `${number.format(Math.sqrt(2 * 6371 * height / 1000))} km`;
+    observerHeight.setAttribute("aria-valuetext", `${number.format(height)} μέτρα`);
+  };
+  observerHeight.addEventListener("input", updateHorizon);
+  updateHorizon();
 }
 
 const lightConeCanvas = document.querySelector("#light-cone-canvas");
