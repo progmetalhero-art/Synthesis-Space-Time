@@ -1,10 +1,11 @@
 const ISSUES = Object.freeze({
   "01": { title: "Synthesis / Τεύχος 01", pdf: "./issues/synthesis-issue-01.pdf", page: "./issue-01.html", pages: 32 },
-  "02": { title: "Synthesis / Τεύχος 02", pdf: "./issues/synthesis-issue-02.pdf", page: "./issue-02.html", pages: 42 }
+  "02": { title: "Synthesis / Τεύχος 02", pdf: "./issues/synthesis-issue-02.pdf", page: "./issue-02.html", pages: 42 },
+  "03": { title: "Synthesis / Τεύχος 03", pdf: "./issues/synthesis-issue-03.pdf", page: "./issue-03.html", pages: 67 }
 });
 
 const parameters = new URLSearchParams(window.location.search);
-const issueId = Object.hasOwn(ISSUES, parameters.get("issue")) ? parameters.get("issue") : "02";
+const issueId = Object.hasOwn(ISSUES, parameters.get("issue")) ? parameters.get("issue") : "03";
 const issue = ISSUES[issueId];
 const requestedPage = Number(parameters.get("page"));
 let pageNumber = Number.isSafeInteger(requestedPage) && requestedPage > 0 ? Math.min(requestedPage, issue.pages) : 1;

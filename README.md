@@ -82,3 +82,7 @@ python3 scripts/build_pages.py --base-url https://progmetalhero-art.github.io/Sy
 ---
 
 Δημιουργήθηκε από τον [progmetalhero-art](https://github.com/progmetalhero-art).
+
+## Τεύχος 03 / Νοέμβριος 2026
+
+Τι είναι το «εγώ»; Η αρχική προβάλλει πλέον το τρίτο τεύχος. `issue-03.html` περιέχει συνδέσμους στα άρθρα, `read.html?issue=03` ανοίγει τις 67 σελίδες και `issues/synthesis-issue-03.pdf` διατηρεί το εγκεκριμένο PDF 1.0. Τα δύο προηγούμενα τεύχη παραμένουν στο αρχείο.
